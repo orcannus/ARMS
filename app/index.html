@@ -2131,4 +2131,9 @@ function initApp() {
 if(!checkStoredLicense()) {
   // Gate is already visible — wait for user to activate
   updateClock();
-  setInterval(updateClock, 1
+  setInterval(updateClock, 1000);
+}
+// Init is handled by unlockApp() → initApp() after license validation
+</script>
+</body>
+</html>
