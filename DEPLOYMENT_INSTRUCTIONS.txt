@@ -1,0 +1,88 @@
+================================================================
+ARMS — GITHUB PAGES DEPLOYMENT INSTRUCTIONS
+Orcannus Technologies
+================================================================
+
+FILES YOU HAVE
+--------------
+GITHUB_ROOT_index.html  →  Sales page (goes in repo ROOT)
+GITHUB_APP_index.html   →  Licensed app + license gate (goes in app/ folder)
+LOCAL_ONLY_KeyGen.html  →  Key generator (NEVER upload, keep on your PC)
+
+
+GITHUB REPO STRUCTURE (what it should look like when done)
+----------------------------------------------------------
+arms/
+├── index.html          ← GITHUB_ROOT_index.html
+└── app/
+    └── index.html      ← GITHUB_APP_index.html
+
+
+YOUR LIVE URLS WHEN DONE
+------------------------
+Sales page  →  https://orcannus.github.io/arms
+App / gate  →  https://orcannus.github.io/arms/app
+
+
+STEP-BY-STEP INSTRUCTIONS
+--------------------------
+
+STEP 1 — Upload the sales page to the repo ROOT
+  1. Go to github.com → your "arms" repo
+  2. Click the existing index.html in the ROOT (not in app/)
+  3. Click the pencil icon (Edit this file)
+  4. Press Ctrl+A to select everything → Delete
+  5. Open GITHUB_ROOT_index.html in Notepad or VS Code
+  6. Press Ctrl+A → Ctrl+C to copy
+  7. Click back in GitHub editor → Ctrl+V to paste
+  8. Scroll down → click "Commit changes" → click "Commit changes" again
+
+STEP 2 — Upload the app to the app/ folder
+  1. Still in your "arms" repo, click the "app" folder
+  2. Click index.html inside the app folder
+  3. Click the pencil icon (Edit this file)
+  4. Press Ctrl+A → Delete
+  5. Open GITHUB_APP_index.html in Notepad or VS Code
+  6. Press Ctrl+A → Ctrl+C to copy
+  7. Click back in GitHub editor → Ctrl+V to paste
+  8. Scroll down → click "Commit changes" → click "Commit changes" again
+
+STEP 3 — Verify GitHub Pages is enabled
+  1. Go to repo Settings → Pages (left sidebar)
+  2. Source should be: Deploy from branch
+  3. Branch should be: main / (root)
+  4. If not set, set it and click Save
+  5. Wait 60 seconds then visit https://orcannus.github.io/arms
+
+STEP 4 — Test everything
+  ✓ https://orcannus.github.io/arms         → shows sales page
+  ✓ https://orcannus.github.io/arms/app     → shows license gate
+  ✓ Buy with PayPal button opens PayPal checkout
+  ✓ Entering a valid key unlocks the app
+  ✓ "Launch App" button on sales page goes to license gate
+
+
+KEYGEN — HOW TO USE (local only)
+---------------------------------
+  1. Open LOCAL_ONLY_KeyGen.html in your browser
+  2. Enter password: 3At$h1T&D13
+  3. Enter customer name, org, email
+  4. Click Generate Key
+  5. Click "Copy Email Template" — paste directly into Gmail and send
+  6. Key log is saved in your browser automatically
+  7. Export CSV anytime for your records
+
+
+CUSTOMER FLOW
+-------------
+  1. Customer visits orcannus.github.io/arms (sales page)
+  2. Clicks "Buy with PayPal — $39.99"
+  3. Completes PayPal payment → you get notified by email
+  4. You open KeyGen, generate a key for them, click "Copy Email Template"
+  5. Paste into Gmail → send
+  6. Customer clicks "Launch App" → enters their key → unlocked
+
+
+================================================================
+support@orcannus.com  |  orcannus.com
+================================================================

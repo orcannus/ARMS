@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ARMS — Assessment Readiness Management System | Orcannus Technologies</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#070f1e;color:#ccd8ec;font-family:'Barlow',sans-serif;}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;background:#0e2044;border-bottom:1px solid rgba(201,168,76,.4);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;letter-spacing:3px;color:#c9a84c;}
+.nav-sub{font-family:'IBM Plex Mono',monospace;font-size:7px;color:#4e6888;letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#7a90b0;text-decoration:none;}
+.nav-links a:hover{color:#c9a84c;}
+.nav-cta{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 20px;border-radius:5px;border:1px solid rgba(201,168,76,.55);background:rgba(201,168,76,.13);color:#c9a84c;text-decoration:none;}
+.nav-cta:hover{background:rgba(201,168,76,.24);}
+
+#hero{background:linear-gradient(180deg,#0e2044 0%,#070f1e 100%);padding:80px 40px 70px;text-align:center;border-bottom:1px solid rgba(201,168,76,.2);}
+.eyebrow{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#c9a84c;background:rgba(201,168,76,.13);border:1px solid rgba(201,168,76,.28);padding:4px 14px;border-radius:3px;margin-bottom:24px;}
+h1{font-family:'Barlow Condensed',sans-serif;font-size:90px;font-weight:800;color:#edf2fb;letter-spacing:8px;line-height:1;margin-bottom:8px;}
+h1 span{color:#c9a84c;}
+.hero-sub{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:400;color:#7a90b0;letter-spacing:4px;text-transform:uppercase;margin-bottom:24px;}
+.hero-desc{font-size:15px;color:#4e6888;max-width:560px;margin:0 auto 36px;line-height:1.8;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border-radius:5px;border:1px solid rgba(201,168,76,.55);background:rgba(201,168,76,.18);color:#c9a84c;text-decoration:none;display:inline-block;}
+.btn-primary:hover{background:rgba(201,168,76,.28);}
+.btn-ghost{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border-radius:5px;border:1px solid rgba(201,168,76,.28);background:transparent;color:#7a90b0;text-decoration:none;display:inline-block;}
+.btn-ghost:hover{border-color:rgba(201,168,76,.55);color:#ccd8ec;}
+.hero-price{margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4e6888;letter-spacing:1px;}
+.hero-price strong{color:#c9a84c;font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;}
+
+.ticker{background:rgba(201,168,76,.04);border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15);overflow:hidden;height:34px;display:flex;align-items:center;}
+.ticker-track{display:flex;gap:40px;white-space:nowrap;animation:tick 30s linear infinite;padding:0 20px;}
+.ticker-track span{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#4e6888;}
+.ticker-dot{width:4px;height:4px;border-radius:50%;background:#c9a84c;opacity:.5;display:inline-block;vertical-align:middle;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{max-width:1080px;margin:0 auto;padding:70px 40px;}
+.sec-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#c9a84c;margin-bottom:10px;}
+h2{font-family:'Barlow Condensed',sans-serif;font-size:42px;font-weight:700;color:#edf2fb;letter-spacing:2px;margin-bottom:14px;line-height:1.1;}
+.sec-desc{font-size:14px;color:#4e6888;line-height:1.9;max-width:540px;margin-bottom:40px;}
+
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;}
+.feat-card{background:#0d1929;border:1px solid rgba(201,168,76,.15);border-radius:8px;padding:24px;}
+.feat-card:hover{border-color:rgba(201,168,76,.3);}
+.feat-icon{font-size:26px;margin-bottom:12px;}
+.feat-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:#edf2fb;letter-spacing:1px;text-transform:uppercase;margin-bottom:7px;}
+.feat-desc{font-size:12px;color:#4e6888;line-height:1.8;}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.25),transparent);margin:0 40px;}
+
+.domains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:32px;}
+.domain-card{background:#0d1929;border:1px solid rgba(201,168,76,.12);border-radius:6px;padding:14px 16px;}
+.domain-code{font-family:'IBM Plex Mono',monospace;font-size:8px;color:#c9a84c;letter-spacing:1px;margin-bottom:4px;}
+.domain-name{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:#edf2fb;}
+.domain-count{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4e6888;margin-top:3px;}
+
+.preview-box{background:#0d1929;border:1px solid rgba(201,168,76,.28);border-radius:8px;overflow:hidden;margin-top:40px;}
+.preview-header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#0e2044;border-bottom:1px solid rgba(201,168,76,.2);}
+.preview-title{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;}
+.preview-badge{font-family:'IBM Plex Mono',monospace;font-size:7px;padding:2px 8px;border-radius:3px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.28);color:#c9a84c;}
+.preview-row{display:flex;align-items:center;gap:14px;padding:10px 16px;border-bottom:1px solid rgba(201,168,76,.06);}
+.preview-row:last-child{border-bottom:none;}
+.preview-id{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#c9a84c;min-width:68px;}
+.preview-name{font-size:11px;color:#ccd8ec;flex:1;}
+.st{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:1px;padding:2px 8px;border-radius:3px;text-transform:uppercase;}
+.st-impl{background:rgba(46,196,144,.12);color:#2ec490;border:1px solid rgba(46,196,144,.3);}
+.st-part{background:rgba(245,166,35,.12);color:#f5a623;border:1px solid rgba(245,166,35,.3);}
+.st-open{background:rgba(232,64,64,.12);color:#e84040;border:1px solid rgba(232,64,64,.3);}
+
+#pricing{max-width:520px;margin:0 auto;padding:70px 40px;text-align:center;}
+.price-card{background:#0d1929;border:1px solid rgba(201,168,76,.55);border-radius:12px;padding:40px;position:relative;overflow:hidden;}
+.price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);}
+.price-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#c9a84c;margin-bottom:12px;}
+.price-big{font-family:'Barlow Condensed',sans-serif;font-size:80px;font-weight:800;color:#edf2fb;line-height:1;}
+.price-big sup{font-size:30px;vertical-align:top;margin-top:14px;display:inline-block;color:#c9a84c;}
+.price-period{font-family:'IBM Plex Mono',monospace;font-size:10px;color:#4e6888;letter-spacing:1px;margin-top:6px;margin-bottom:28px;}
+.price-list{text-align:left;margin-bottom:28px;}
+.price-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid rgba(201,168,76,.07);font-size:13px;color:#7a90b0;}
+.price-item:last-child{border-bottom:none;}
+.chk{color:#2ec490;flex-shrink:0;}
+.price-btn{width:100%;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px;border-radius:6px;border:1px solid rgba(201,168,76,.55);background:rgba(201,168,76,.18);color:#c9a84c;cursor:pointer;}
+.price-btn:hover{background:rgba(201,168,76,.28);}
+.price-note{font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4e6888;margin-top:14px;line-height:1.7;}
+.price-note a{color:#c9a84c;text-decoration:none;}
+
+.faq-wrap{max-width:720px;margin:0 auto;}
+.faq-item{background:#0d1929;border:1px solid rgba(201,168,76,.12);border-radius:6px;margin-bottom:4px;overflow:hidden;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;color:#edf2fb;letter-spacing:.5px;}
+.faq-q:hover{background:rgba(201,168,76,.04);}
+.faq-arrow{color:#c9a84c;transition:transform .25s;flex-shrink:0;font-size:13px;}
+.faq-a{font-size:13px;color:#4e6888;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 18px;}
+.faq-a.open{max-height:200px;padding:0 18px 16px;}
+.faq-arrow.open{transform:rotate(180deg);}
+
+footer{border-top:1px solid rgba(201,168,76,.2);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font-family:'IBM Plex Mono',monospace;font-size:9px;color:#4e6888;letter-spacing:1px;}
+footer a{color:#4e6888;text-decoration:none;}
+footer a:hover{color:#c9a84c;}
+.footer-links{display:flex;gap:22px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <svg width="30" height="33" viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 4 L96 28 L96 72 L50 106 L4 72 L4 28 Z" fill="#0e2044" stroke="#c9a84c" stroke-width="4"/>
+      <path d="M50 11 L89 32 L89 70 L50 99 L11 70 L11 32 Z" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity=".5"/>
+      <ellipse cx="50" cy="68" rx="7" ry="9" fill="#c9a84c"/>
+      <ellipse cx="50" cy="52" rx="5" ry="5.5" fill="#c9a84c"/>
+      <path d="M43 62 Q28 48 14 42 Q22 52 25 62 Q33 60 43 68 Z" fill="#c9a84c"/>
+      <path d="M57 62 Q72 48 86 42 Q78 52 75 62 Q67 60 57 68 Z" fill="#c9a84c"/>
+      <path d="M44 76 L42 92 L46 86 L50 93 L54 86 L58 92 L56 76 Z" fill="#c9a84c"/>
+    </svg>
+    <div>
+      <div class="nav-title">ARMS</div>
+      <div class="nav-sub">by Orcannus Technologies</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#domains">Coverage</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="app/index.html" class="nav-cta">Launch App →</a>
+  </div>
+</nav>
+
+<div id="hero">
+  <div class="eyebrow">CMMC 2.0 · Level 2 · NIST SP 800-171 Rev 2</div>
+  <h1><span>ARMS</span></h1>
+  <div class="hero-sub">Assessment Readiness Management System</div>
+  <p class="hero-desc">The professional compliance tool for organizations pursuing CMMC 2.0 Level 2 certification. Track all 110 controls, calculate your SPRS score, manage your POA&amp;M, and generate audit-ready reports — in a single secure file.</p>
+  <div class="hero-btns">
+    <a href="#pricing" class="btn-primary">Buy License — $39.99</a>
+    <a href="app/index.html" class="btn-ghost">Launch App →</a>
+  </div>
+  <div class="hero-price"><strong>$39.99</strong> &nbsp;·&nbsp; Perpetual License &nbsp;·&nbsp; No Subscription &nbsp;·&nbsp; Single File App</div>
+</div>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-dot"></span><span>110 NIST SP 800-171 Controls</span>
+    <span class="ticker-dot"></span><span>SPRS Score Calculator</span>
+    <span class="ticker-dot"></span><span>POA&amp;M Tracker</span>
+    <span class="ticker-dot"></span><span>Evidence Locker</span>
+    <span class="ticker-dot"></span><span>AI Compliance Advisor</span>
+    <span class="ticker-dot"></span><span>CMMC 2.0 Level 2</span>
+    <span class="ticker-dot"></span><span>DFARS 252.204-7019</span>
+    <span class="ticker-dot"></span><span>HTML Export</span>
+    <span class="ticker-dot"></span><span>No Server Required</span>
+    <span class="ticker-dot"></span><span>110 NIST SP 800-171 Controls</span>
+    <span class="ticker-dot"></span><span>SPRS Score Calculator</span>
+    <span class="ticker-dot"></span><span>POA&amp;M Tracker</span>
+    <span class="ticker-dot"></span><span>Evidence Locker</span>
+    <span class="ticker-dot"></span><span>AI Compliance Advisor</span>
+    <span class="ticker-dot"></span><span>CMMC 2.0 Level 2</span>
+    <span class="ticker-dot"></span><span>DFARS 252.204-7019</span>
+    <span class="ticker-dot"></span><span>HTML Export</span>
+    <span class="ticker-dot"></span><span>No Server Required</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="features">
+  <div class="sec-label">What's Included</div>
+  <h2>Everything You Need for<br>CMMC Level 2 Readiness</h2>
+  <p class="sec-desc">ARMS is purpose-built for DoD contractors and subcontractors who need to self-assess, document, and report their NIST SP 800-171 compliance posture.</p>
+  <div class="feat-grid">
+    <div class="feat-card"><div class="feat-icon">🛡️</div><div class="feat-title">Control Assessment</div><div class="feat-desc">Work through all 110 NIST SP 800-171 Rev 2 controls organized by domain. Set status, add implementation notes, and assign priority for each control.</div></div>
+    <div class="feat-card"><div class="feat-icon">📊</div><div class="feat-title">SPRS Score Calculator</div><div class="feat-desc">Automatically calculates your Supplier Performance Risk System score in real time. Generates a submission-ready summary for the DoD SPRS portal.</div></div>
+    <div class="feat-card"><div class="feat-icon">📋</div><div class="feat-title">POA&amp;M Tracker</div><div class="feat-desc">Log remediation tasks with owners, target dates, and priorities. Visual Gantt timeline keeps your remediation schedule on track.</div></div>
+    <div class="feat-card"><div class="feat-icon">🗄️</div><div class="feat-title">Evidence Locker</div><div class="feat-desc">Catalog policies, screenshots, configurations, audit logs, certs, and scan reports. Tag by domain and control for audit-ready organization.</div></div>
+    <div class="feat-card"><div class="feat-icon">🤖</div><div class="feat-title">AI Compliance Advisor</div><div class="feat-desc">Ask plain-language questions about any control. Get actionable implementation guidance and audit prep tips powered by Claude AI.</div></div>
+    <div class="feat-card"><div class="feat-icon">📄</div><div class="feat-title">Audit-Ready Reports</div><div class="feat-desc">Export full HTML compliance reports, POA&amp;M summaries, and SPRS score packages. Professional formatting for C3PAO submissions.</div></div>
+  </div>
+
+  <div class="preview-box" style="margin-top:50px;">
+    <div class="preview-header">
+      <span class="preview-title">Assessment · Access Control (AC)</span>
+      <span class="preview-badge">14 Controls</span>
+    </div>
+    <div class="preview-row"><span class="preview-id">3.1.1</span><span class="preview-name">Limit system access to authorized users, processes acting on behalf of authorized users, and devices</span><span class="st st-impl">Implemented</span></div>
+    <div class="preview-row"><span class="preview-id">3.1.2</span><span class="preview-name">Limit system access to the types of transactions and functions that authorized users are permitted to execute</span><span class="st st-impl">Implemented</span></div>
+    <div class="preview-row"><span class="preview-id">3.1.3</span><span class="preview-name">Control the flow of CUI in accordance with approved authorizations</span><span class="st st-part">Partial</span></div>
+    <div class="preview-row"><span class="preview-id">3.1.4</span><span class="preview-name">Separate the duties of individuals to reduce the risk of malevolent activity</span><span class="st st-part">Partial</span></div>
+    <div class="preview-row"><span class="preview-id">3.1.5</span><span class="preview-name">Employ the principle of least privilege, including for specific security functions and privileged accounts</span><span class="st st-open">Not Started</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="domains">
+  <div class="sec-label">Full Coverage</div>
+  <h2>All 14 NIST SP 800-171<br>Practice Domains</h2>
+  <p class="sec-desc">Every domain from NIST SP 800-171 Rev 2 is fully covered — 110 controls total, organized and weighted for SPRS scoring.</p>
+  <div class="domains-grid">
+    <div class="domain-card"><div class="domain-code">AC</div><div class="domain-name">Access Control</div><div class="domain-count">22 controls</div></div>
+    <div class="domain-card"><div class="domain-code">AT</div><div class="domain-name">Awareness &amp; Training</div><div class="domain-count">3 controls</div></div>
+    <div class="domain-card"><div class="domain-code">AU</div><div class="domain-name">Audit &amp; Accountability</div><div class="domain-count">9 controls</div></div>
+    <div class="domain-card"><div class="domain-code">CM</div><div class="domain-name">Configuration Mgmt</div><div class="domain-count">9 controls</div></div>
+    <div class="domain-card"><div class="domain-code">IA</div><div class="domain-name">Identification &amp; Auth</div><div class="domain-count">11 controls</div></div>
+    <div class="domain-card"><div class="domain-code">IR</div><div class="domain-name">Incident Response</div><div class="domain-count">3 controls</div></div>
+    <div class="domain-card"><div class="domain-code">MA</div><div class="domain-name">Maintenance</div><div class="domain-count">6 controls</div></div>
+    <div class="domain-card"><div class="domain-code">MP</div><div class="domain-name">Media Protection</div><div class="domain-count">9 controls</div></div>
+    <div class="domain-card"><div class="domain-code">PS</div><div class="domain-name">Personnel Security</div><div class="domain-count">2 controls</div></div>
+    <div class="domain-card"><div class="domain-code">PE</div><div class="domain-name">Physical Protection</div><div class="domain-count">6 controls</div></div>
+    <div class="domain-card"><div class="domain-code">RA</div><div class="domain-name">Risk Assessment</div><div class="domain-count">3 controls</div></div>
+    <div class="domain-card"><div class="domain-code">CA</div><div class="domain-name">Security Assessment</div><div class="domain-count">4 controls</div></div>
+    <div class="domain-card"><div class="domain-code">SC</div><div class="domain-name">System &amp; Comm Protection</div><div class="domain-count">16 controls</div></div>
+    <div class="domain-card"><div class="domain-code">SI</div><div class="domain-name">System &amp; Info Integrity</div><div class="domain-count">7 controls</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="pricing">
+  <div class="sec-label" style="text-align:center;">Simple Pricing</div>
+  <h2 style="text-align:center;">One Price. Yours Forever.</h2>
+  <div class="price-card">
+    <div class="price-label">ARMS — Full License</div>
+    <div class="price-big"><sup>$</sup>39<span style="font-size:40px;color:#7a90b0">.99</span></div>
+    <div class="price-period">Perpetual License · No Subscription · No Renewals</div>
+    <div class="price-list">
+      <div class="price-item"><span class="chk">✓</span><span>All 110 NIST SP 800-171 Rev 2 controls</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>Real-time SPRS score calculator</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>POA&amp;M tracker with Gantt view</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>Evidence locker &amp; artifact catalog</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>AI Compliance Advisor (Claude-powered)</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>HTML, POA&amp;M &amp; SPRS exports</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>Single HTML file — no install, no server</span></div>
+      <div class="price-item"><span class="chk">✓</span><span>All future updates included</span></div>
+    </div>
+    <button class="price-btn" onclick="buyNow()">Buy with PayPal — $39.99</button>
+    <div class="price-note">After payment, your license key will be emailed within 1 business day.<br>Questions? <a href="/cdn-cgi/l/email-protection#e1929491918e9395a18e9382808f8f9492cf828e8c"><span class="__cf_email__" data-cfemail="394a4c4949564b4d79564b5a5857574c4a175a5654">[email&#160;protected]</span></a></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="faq" style="padding-bottom:70px;">
+  <div class="sec-label" style="text-align:center;">FAQ</div>
+  <h2 style="text-align:center;margin-bottom:32px;">Common Questions</h2>
+  <div class="faq-wrap">
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)"><span>What is CMMC 2.0 Level 2 and do I need it?</span><span class="faq-arrow">▾</span></div>
+      <div class="faq-a">CMMC 2.0 Level 2 is required for DoD contractors who handle Controlled Unclassified Information (CUI). It maps to NIST SP 800-171 Rev 2. If your contract includes DFARS clause 252.204-7012, you need to assess against these 110 controls and submit your SPRS score to the DoD portal.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)"><span>Is ARMS a replacement for a C3PAO assessment?</span><span class="faq-arrow">▾</span></div>
+      <div class="faq-a">No. ARMS is a self-assessment and readiness tool. For contracts requiring a third-party assessment, you still need a certified C3PAO. ARMS is ideal for conducting your own annual self-assessment and maintaining your SPRS score documentation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)"><span>How is the app delivered? Do I need to install anything?</span><span class="faq-arrow">▾</span></div>
+      <div class="faq-a">ARMS is a single HTML file. After purchase you receive a license key by email. Open the app in any modern browser, enter your key, and you're in. No installation, no server, no cloud account required.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)"><span>Where is my assessment data stored?</span><span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Entirely in your browser's local storage — nothing leaves your machine. You can also save your data to a local JSON file at any time using the built-in Save function (Ctrl+S), and reload it later.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="faq(this)"><span>Is this a subscription? Will I be charged again?</span><span class="faq-arrow">▾</span></div>
+      <div class="faq-a">No subscription, ever. $39.99 is a one-time perpetual license. You get all future updates to ARMS at no additional cost.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><span style="color:#c9a84c;font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;">ARMS</span> &nbsp;·&nbsp; © 2025 Orcannus Technologies &nbsp;·&nbsp; All rights reserved</div>
+  <div class="footer-links">
+    <a href="/cdn-cgi/l/email-protection#f2818782829d8086b29d8091939c9c8781dc919d9f"><span class="__cf_email__" data-cfemail="6a191f1a1a05181e2a0518090b04041f1944090507">[email&#160;protected]</span></a>
+    <a href="https://orcannus.com">orcannus.com</a>
+    <a href="app/index.html">Launch App</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function buyNow(){
+  window.open('https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=rsweatland%40orcannus.com&item_name=ARMS+License&amount=39.99&currency_code=USD&no_shipping=1','_blank');
+}
+function faq(el){
+  va
