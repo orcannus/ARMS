@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARMS – Licensing | Orcannus Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#080c10;--card:#111820;--border:#1e2d3d;--accent:#00c8ff;--accent2:#0077ff;--text:#c9d1d9;--muted:#586069;--heading:#e6edf3;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,200,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+  .container{max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+  header{padding:28px 0 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;}
+  .logo span{color:var(--heading);}
+  .badge{font-family:'Share Tech Mono',monospace;font-size:0.7rem;background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.2);color:var(--accent);padding:4px 10px;letter-spacing:0.1em;}
+  .hero{text-align:center;padding:70px 0 50px;}
+  .hero-label{font-family:'Share Tech Mono',monospace;font-size:0.72rem;letter-spacing:0.25em;color:var(--accent);text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:10px;}
+  .hero-label::before,.hero-label::after{content:'';display:block;width:40px;height:1px;background:var(--accent);opacity:0.4;}
+  .hero h1{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(2.2rem,5vw,3.4rem);color:var(--heading);letter-spacing:0.04em;line-height:1.1;margin-bottom:18px;}
+  .hero h1 em{font-style:normal;color:var(--accent);}
+  .hero p{font-size:1.05rem;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.7;}
+
+  /* Single license card centered */
+  .license-wrap{display:flex;justify-content:center;padding-bottom:80px;}
+  .license-card{background:var(--card);border:1px solid var(--accent2);padding:50px 52px;max-width:520px;width:100%;text-align:center;position:relative;background:linear-gradient(160deg,#0d1d30 0%,var(--card) 60%);}
+  .license-card::after{content:'';position:absolute;inset:0;border:1px solid rgba(0,200,255,0.08);pointer-events:none;}
+  .shield-icon{font-size:2.8rem;margin-bottom:20px;display:block;filter:drop-shadow(0 0 12px rgba(0,200,255,0.4));}
+  .tier-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--heading);margin-bottom:8px;}
+  .tier-desc{font-size:0.9rem;color:var(--muted);margin-bottom:32px;line-height:1.6;max-width:360px;margin-left:auto;margin-right:auto;}
+  .price-block{margin-bottom:8px;}
+  .price{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:4rem;color:var(--heading);line-height:1;}
+  .price sup{font-size:1.6rem;vertical-align:top;margin-top:12px;display:inline-block;}
+  .price-note{font-family:'Share Tech Mono',monospace;font-size:0.72rem;color:var(--accent);letter-spacing:0.18em;margin-bottom:36px;display:block;}
+  .divider{border:none;border-top:1px solid var(--border);margin-bottom:30px;}
+  .features{list-style:none;margin-bottom:38px;text-align:left;max-width:320px;margin-left:auto;margin-right:auto;}
+  .features li{font-size:0.9rem;color:var(--text);padding:7px 0;display:flex;align-items:flex-start;gap:12px;line-height:1.5;}
+  .features li::before{content:'▸';color:var(--accent);font-size:0.75rem;margin-top:2px;flex-shrink:0;}
+  .paypal-wrap{display:flex;justify-content:center;}
+  .cmmc-note{font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;margin-top:18px;border:1px solid var(--border);padding:10px 14px;}
+  footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;font-family:'Share Tech Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.08em;position:relative;z-index:1;}
+  footer a{color:var(--accent);text-decoration:none;}
+  @keyframes scanline{0%{top:-5%}100%{top:105%}}
+  .scanline{position:fixed;left:0;width:100%;height:2px;background:linear-gradient(transparent,rgba(0,200,255,0.04),transparent);pointer-events:none;animation:scanline 8s linear infinite;z-index:9999;}
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+<div class="container">
+  <header>
+    <div class="logo"><span>ORCANNUS</span> TECHNOLOGIES</div>
+    <div class="badge">ARMS // LICENSING</div>
+  </header>
+  <section class="hero">
+    <div class="hero-label">Full Access. One Payment.</div>
+    <h1>Assessment Readiness<br><em>Management System</em></h1>
+    <p>CMMC 2.0 Level 2 compliance tooling for defense contractors. No recurring fees — pay once, own it.</p>
+  </section>
+  <div class="license-wrap">
+    <div class="license-card">
+      <span class="shield-icon">🛡️</span>
+      <div class="tier-name">Full License</div>
+      <div class="tier-desc">Complete ARMS access for your organization's CMMC compliance journey — SPRS scoring, POA&M Gantt, and AI analysis included.</div>
+      <div class="price-block">
+        <div class="price"><sup>$</sup>39<span style="font-size:2rem">.99</span></div>
+      </div>
+      <span class="price-note">ONE-TIME LICENSE — NO SUBSCRIPTION</span>
+      <hr class="divider">
+      <ul class="features">
+        <li>Full 8-tab CMMC 2.0 Level 2 interface</li>
+        <li>SPRS score calculator</li>
+        <li>POA&M Gantt chart builder</li>
+        <li>Claude AI analysis integration</li>
+        <li>Unlimited assessments & exports</li>
+        <li>Lifetime access + updates</li>
+        <li>Email support via Orcannus</li>
+      </ul>
+      <div class="paypal-wrap">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="rsweatland@orcannus.com">
+          <input type="hidden" name="item_name" value="ARMS Full License">
+          <input type="hidden" name="amount" value="39.99">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="return" value="https://orcannus.github.io/arms/thank-you.html">
+          <input type="hidden" name="cancel_return" value="https://orcannus.github.io/arms/cancel.html">
+          <input type="hidden" name="no_shipping" value="1">
+          <input type="submit" value="BUY NOW — PAY WITH PAYPAL" style="background:#003087;color:#fff;font-family:'Share Tech Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;padding:12px 20px;border:none;cursor:pointer;width:100%;" onmouseover="this.style.background='#001f5b'" onmouseout="this.style.background='#003087'">
+        </form>
+      </div>
+      <div class="cmmc-note">FOR CMMC 2.0 COMPLIANCE USE — NOT AN OFFICIAL GOVERNMENT TOOL</div>
+    </div>
+  </div>
+  <footer>
+    &copy; 2026 ORCANNUS TECHNOLOGIES &nbsp;|&nbsp;
+    <a href="/cdn-cgi/l/email-protection#94e6e7e3f1f5e0f8f5faf0d4fbe6f7f5fafae1e7baf7fbf9"><span class="__cf_email__" data-cfemail="433130342622372f222d27032c31202
